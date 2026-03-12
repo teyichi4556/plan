@@ -1,0 +1,1773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>寺田優 成功プラン</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600&family=Bebas+Neue&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #f5f0e8;
+  --surface: #fdfaf4;
+  --surface2: #f0ebe0;
+  --border: #e0d8c8;
+  --border-light: #ccc4b0;
+  --gold: #9a6e28;
+  --gold-dim: #c49a50;
+  --gold-bright: #7a5018;
+  --text: #1a1610;
+  --text-muted: #5a5040;
+  --text-dim: #9a9080;
+  --accent: #9a6e28;
+  --red: #b84040;
+  --green: #2e7d4f;
+  --blue: #2e5a9a;
+  --purple: #6a3a9a;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  line-height: 1.75;
+}
+
+/* ── Layout ── */
+.app { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 260px;
+  min-width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.main { flex: 1; overflow-y: auto; }
+
+/* ── Sidebar ── */
+.sidebar-header {
+  padding: 32px 24px 20px;
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.brand-jp {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.05em;
+  line-height: 1.3;
+}
+
+.brand-sub {
+  font-size: 10px;
+  color: var(--text-dim);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 6px;
+}
+
+.final-goal-box {
+  margin: 16px 24px;
+  flex-shrink: 0;
+  padding: 12px 14px;
+  background: rgba(154,110,40,0.06);
+  border: 1px solid var(--gold-dim);
+  border-radius: 6px;
+  font-size: 11px;
+  color: var(--gold);
+  line-height: 1.5;
+}
+
+.final-goal-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.nav { padding: 12px 0; flex: 1; overflow-y: auto; min-height: 0; }
+
+.nav-section-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 8px 24px 4px;
+  font-weight: 500;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 24px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  border-left: 2px solid transparent;
+}
+
+.nav-item:hover { color: var(--text); background: rgba(255,255,255,0.03); }
+.nav-item.active {
+  color: var(--gold-bright);
+  background: rgba(154,110,40,0.07);
+  border-left-color: var(--gold);
+  font-weight: 500;
+}
+
+.nav-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--border-light);
+  flex-shrink: 0;
+}
+
+.nav-item.active .nav-dot { background: var(--gold); }
+
+.progress-mini {
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-left: auto;
+}
+
+.sidebar-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+/* ── Main Content ── */
+.page { display: none; padding: 48px 52px; max-width: 860px; }
+.page.active { display: block; }
+
+.page-header { margin-bottom: 40px; }
+
+.page-eyebrow {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.page-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 56px;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.page-title span { color: var(--gold-bright); }
+
+.page-meta {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ── Overview Page ── */
+.timeline {
+  position: relative;
+  padding-left: 32px;
+  margin: 32px 0;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), var(--border));
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 28px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -28px;
+  top: 14px;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--border-light);
+  border: 1px solid var(--border-light);
+}
+
+.timeline-item.current .timeline-dot {
+  background: var(--gold);
+  border-color: var(--gold);
+  box-shadow: 0 0 12px rgba(154,110,40,0.3);
+}
+
+.timeline-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.timeline-card:hover {
+  border-color: var(--border-light);
+  transform: translateX(3px);
+}
+
+.timeline-item.current .timeline-card {
+  border-color: var(--gold-dim);
+  background: rgba(154,110,40,0.04);
+}
+
+.tc-header { display: flex; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+
+.tc-year {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.timeline-item.current .tc-year { color: var(--gold); }
+
+.tc-age { font-size: 13px; color: var(--text-muted); }
+
+.tc-label {
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.tc-goal {
+  font-size: 14px;
+  color: var(--text);
+  font-style: italic;
+}
+
+.tc-goal.empty { color: var(--text-dim); }
+
+.progress-bar-wrap {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 2px;
+  background: var(--border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: width 0.3s;
+}
+
+.progress-pct { font-size: 11px; color: var(--text-dim); min-width: 30px; text-align: right; }
+
+/* ── Section Cards ── */
+.sections-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.section-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: border-color 0.15s;
+}
+
+.section-card:hover { border-color: var(--border-light); }
+
+.sc-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.sc-icon {
+  width: 28px; height: 28px;
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.sc-title { font-size: 14px; font-weight: 500; color: var(--text); }
+
+/* ── Form Elements ── */
+.field { margin-bottom: 20px; }
+
+.field-label {
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 7px;
+  display: block;
+  font-weight: 500;
+}
+
+.field-input,
+.field-textarea {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border-light);
+  border-radius: 5px;
+  color: var(--text);
+  font-family: 'Noto Sans KR', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  padding: 10px 13px;
+  transition: border-color 0.15s;
+  resize: none;
+}
+
+.field-input:focus,
+.field-textarea:focus {
+  outline: none;
+  border-color: var(--gold-dim);
+}
+
+.field-textarea { min-height: 72px; line-height: 1.7; }
+
+.field-row { display: flex; gap: 12px; }
+.field-row .field { flex: 1; }
+
+/* ── Checklist ── */
+.checklist { list-style: none; }
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 7px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.check-item:last-child { border-bottom: none; }
+
+.check-box {
+  width: 16px; height: 16px;
+  border: 1px solid var(--border-light);
+  border-radius: 3px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+
+.check-box:hover { border-color: var(--gold-dim); }
+.check-box.checked { background: var(--gold); border-color: var(--gold); }
+.check-box.checked::after { content: '✓'; font-size: 10px; color: #000; font-weight: 600; }
+
+.check-text {
+  font-size: 14px;
+  color: var(--text);
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 400;
+  resize: none;
+  line-height: 1.6;
+}
+
+.check-text.done { text-decoration: line-through; color: var(--text-dim); }
+
+.add-check-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.add-check-btn:hover { color: var(--gold); }
+
+/* ── Tabs ── */
+.tabs {
+  display: flex;
+  gap: 0;
+  margin-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  padding: 10px 20px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  transition: all 0.15s;
+  letter-spacing: 0.03em;
+}
+
+.tab:hover { color: var(--text); }
+.tab.active { color: var(--gold-bright); border-bottom-color: var(--gold); font-weight: 500; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+/* ── Save button ── */
+.save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  background: rgba(154,110,40,0.08);
+  border: 1px solid var(--gold-dim);
+  border-radius: 5px;
+  color: var(--gold);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+  transition: all 0.15s;
+}
+
+.save-btn:hover { background: rgba(154,110,40,0.18); }
+
+.save-notice {
+  font-size: 11px;
+  color: var(--text-dim);
+  margin-top: 8px;
+}
+
+/* ── Drive Sync ── */
+.drive-bar {
+  padding: 10px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.drive-status {
+  font-size: 11px;
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.drive-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  flex-shrink: 0;
+}
+.drive-dot.connected { background: #52b878; }
+.drive-dot.syncing { background: var(--gold); animation: blink 1s ease-in-out infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.drive-btn-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.drive-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border-light);
+  background: transparent;
+  color: var(--text-muted);
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.drive-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+.drive-btn.primary { border-color: var(--gold-dim); color: var(--gold); background: rgba(154,110,40,0.06); }
+.drive-btn.primary:hover { background: rgba(154,110,40,0.14); }
+.drive-btn:disabled { opacity: 0.35; cursor: default; }
+.drive-toast {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--surface2);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 10px 16px;
+  font-size: 13px;
+  color: var(--text);
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: all 0.25s;
+  pointer-events: none;
+  max-width: 280px;
+}
+.drive-toast.show { opacity: 1; transform: translateY(0); }
+
+/* ── Principle cards ── */
+.principle-card {
+  border-left: 2px solid var(--gold);
+  padding: 14px 18px;
+  margin-bottom: 12px;
+  background: rgba(154,110,40,0.06);
+  font-size: 14px;
+  color: var(--text);
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ── Log table ── */
+.log-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.log-table th {
+  text-align: left;
+  padding: 8px 12px;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--border-light);
+  font-weight: 500;
+}
+.log-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+.log-table td input, .log-table td textarea {
+  width: 100%;
+  background: none;
+  border: none;
+  outline: none;
+  font-family: inherit;
+  font-size: 14px;
+  color: var(--text);
+  font-weight: 400;
+  resize: none;
+}
+
+.add-row-btn {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.add-row-btn:hover { color: var(--gold); }
+
+/* ── Divider ── */
+.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 28px 0;
+}
+
+/* ── Level slider ── */
+.level-row { display: flex; align-items: center; gap: 12px; }
+.level-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  height: 2px;
+  background: var(--border-light);
+  border-radius: 2px;
+  outline: none;
+}
+.level-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--gold);
+  cursor: pointer;
+}
+.level-val {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--gold);
+  min-width: 24px;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 2px; }
+
+/* ── RPG Level ── */
+.rpg-box {
+  margin: 0 24px;
+  padding: 14px 16px;
+  flex-shrink: 0;
+  margin-bottom: 4px;
+  background: linear-gradient(135deg, rgba(154,110,40,0.10), rgba(154,110,40,0.04));
+  border: 1px solid var(--gold-dim);
+  border-radius: 8px;
+}
+.rpg-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.rpg-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.rpg-level {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+}
+.rpg-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+}
+.rpg-title-en {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+.rpg-xp-label {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: right;
+  letter-spacing: 0.08em;
+}
+.rpg-bar-wrap {
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.rpg-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-dim), var(--gold));
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+
+/* ── Mobile Layout ── */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 14px; left: 14px;
+  z-index: 200;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  cursor: pointer;
+  flex-direction: column;
+  gap: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 20px; height: 2px;
+  background: var(--gold);
+  border-radius: 2px;
+  transition: all 0.2s;
+}
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  z-index: 100;
+}
+@media (max-width: 700px) {
+  .hamburger { display: flex; }
+  .sidebar {
+    position: fixed;
+    left: -280px;
+    top: 0; bottom: 0;
+    z-index: 150;
+    transition: left 0.25s ease;
+    width: 260px;
+    min-width: 260px;
+  }
+  .sidebar.open { left: 0; }
+  .sidebar-overlay.open { display: block; }
+  .main { width: 100%; }
+  .page { padding: 56px 20px 32px; }
+  .page-title { font-size: 40px; }
+  .sections-grid { grid-template-columns: 1fr; }
+  .tabs { overflow-x: auto; white-space: nowrap; padding-bottom: 2px; }
+  .tab { display: inline-block; }
+}
+</style>
+</head>
+<body>
+<div class="app">
+<button class="hamburger" id="hamburger" onclick="toggleSidebar()" aria-label="메뉴">
+  <span></span><span></span><span></span>
+</button>
+<div class="sidebar-overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="brand-jp">寺田 優</div>
+    <div class="brand-sub">Singer-Songwriter · 成功プラン</div>
+  </div>
+  <div class="final-goal-box">
+    <div class="final-goal-label">Final Goal</div>
+    솔로 아티스트로<br>도쿄돔 입성
+  </div>
+
+  <!-- RPG 레벨 박스 -->
+  <div class="rpg-box">
+    <div class="rpg-top">
+      <div class="rpg-title-row">
+        <div class="rpg-level" id="rpg-level-label">Lv.1</div>
+        <div class="rpg-title" id="rpg-title-ko">입문자</div>
+        <div class="rpg-title-en" id="rpg-title-en">Seeker</div>
+      </div>
+      <div class="rpg-xp-label" id="rpg-xp-label">0 / 10 XP</div>
+    </div>
+    <div class="rpg-bar-wrap">
+      <div class="rpg-bar-fill" id="rpg-bar-fill" style="width:0%"></div>
+    </div>
+  </div>
+
+  <nav class="nav">
+    <div class="nav-section-label">Overview</div>
+    <div class="nav-item active" onclick="showPage('month-overview')">
+      <div class="nav-dot"></div>
+      이번 달 목표
+    </div>
+    <div class="nav-item" onclick="showPage('overview')">
+      <div class="nav-dot"></div>
+      전체 목표 지도
+    </div>
+    <div class="nav-item" onclick="showPage('principles')">
+      <div class="nav-dot"></div>
+      원칙 & 가치관
+    </div>
+
+    <div class="nav-section-label" style="margin-top:8px">목표</div>
+    <div class="nav-item" onclick="showPage('y1')">
+      <div class="nav-dot"></div>
+      1년 후 · 2027
+      <span class="progress-mini" id="nav-pct-y1">0%</span>
+    </div>
+    <div class="nav-item" onclick="showPage('y3')">
+      <div class="nav-dot"></div>
+      3년 후 · 2029
+      <span class="progress-mini" id="nav-pct-y3">0%</span>
+    </div>
+    <div class="nav-item" onclick="showPage('y5')">
+      <div class="nav-dot"></div>
+      5년 후 · 2031
+      <span class="progress-mini" id="nav-pct-y5">0%</span>
+    </div>
+    <div class="nav-item" onclick="showPage('y10')">
+      <div class="nav-dot"></div>
+      10년 후 · 2036
+      <span class="progress-mini" id="nav-pct-y10">0%</span>
+    </div>
+
+    <div class="nav-section-label" style="margin-top:8px">월 별 목표</div>
+    <div class="nav-item" onclick="showPage('month')">
+      <div class="nav-dot"></div>
+      <span id="nav-month-label">이번 달</span>
+      <span class="progress-mini" id="nav-pct-month">0%</span>
+    </div>
+    <div id="nav-past-months"></div>
+  </nav>
+  <div class="sidebar-footer">
+    로컬 저장: <span id="last-saved">—</span>
+  </div>
+  <div class="drive-bar">
+    <div class="drive-status">
+      <div class="drive-dot" id="drive-dot"></div>
+      <span id="drive-status-text">Google Drive 미연결</span>
+    </div>
+    <div class="drive-btn-row">
+      <button class="drive-btn primary" id="btn-drive-login" onclick="driveLogin()">Google 로그인</button>
+      <button class="drive-btn" id="btn-drive-save" onclick="driveSave()" disabled>Drive 저장</button>
+      <button class="drive-btn" id="btn-drive-load" onclick="driveLoad()" disabled>불러오기</button>
+    </div>
+  </div>
+</aside>
+<div class="drive-toast" id="drive-toast"></div>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- ── MONTH OVERVIEW (첫 화면) ── -->
+<section class="page active" id="page-month-overview">
+  <div class="page-header">
+    <div class="page-eyebrow">이번 달 목표</div>
+    <div class="page-title"><span id="month-title-text2">—</span></div>
+    <div class="page-meta" id="month-subtitle2">—</div>
+  </div>
+  <div class="timeline-item current" style="padding-left:0;margin-bottom:0">
+    <div class="timeline-card" onclick="showPage('month')" style="border-color:var(--gold-dim)">
+      <div class="tc-header">
+        <div class="tc-year" id="overview-month-year" style="font-size:20px">—</div>
+        <div class="tc-age" id="overview-month-date">—</div>
+      </div>
+      <div class="tc-label">이번 달 핵심 목표</div>
+      <div class="tc-goal" id="overview-month-goal">목표를 입력해주세요 →</div>
+      <div class="progress-bar-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="pf-month" style="width:0%"></div></div>
+        <div class="progress-pct" id="pp-month">0%</div>
+      </div>
+    </div>
+  </div>
+  <p style="margin-top:14px;font-size:13px;color:var(--text-muted);cursor:pointer" onclick="showPage('month')">→ 상세 목표 보기</p>
+</section>
+
+<!-- ── OVERVIEW (전체 목표 지도) ── -->
+<section class="page" id="page-overview">
+  <div class="page-header">
+    <div class="page-eyebrow">Singer-Songwriter</div>
+    <div class="page-title">전체 <span>목표 지도</span></div>
+    <div class="page-meta">寺田 優 · 2026 → 도쿄돔</div>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item current">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card">
+        <div class="tc-header">
+          <div class="tc-year">2026</div>
+          <div class="tc-age">만 25세 · 지금</div>
+        </div>
+        <div class="tc-label">현재</div>
+        <div class="tc-goal">쇼비뮤직컬리지 보컬학과 입학 · 기반 구축</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pf-now" style="width:0%"></div></div>
+          <div class="progress-pct" id="pp-now">0%</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" onclick="showPage('y1')">
+        <div class="tc-header">
+          <div class="tc-year">2027</div>
+          <div class="tc-age">만 26세</div>
+        </div>
+        <div class="tc-label">1년 목표</div>
+        <div class="tc-goal empty" id="overview-y1-goal">목표를 입력해주세요 →</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pf-y1" style="width:0%"></div></div>
+          <div class="progress-pct" id="pp-y1">0%</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" onclick="showPage('y3')">
+        <div class="tc-header">
+          <div class="tc-year">2029</div>
+          <div class="tc-age">만 28세</div>
+        </div>
+        <div class="tc-label">3년 목표</div>
+        <div class="tc-goal empty" id="overview-y3-goal">목표를 입력해주세요 →</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pf-y3" style="width:0%"></div></div>
+          <div class="progress-pct" id="pp-y3">0%</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" onclick="showPage('y5')">
+        <div class="tc-header">
+          <div class="tc-year">2031</div>
+          <div class="tc-age">만 30세</div>
+        </div>
+        <div class="tc-label">5년 목표</div>
+        <div class="tc-goal empty" id="overview-y5-goal">목표를 입력해주세요 →</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pf-y5" style="width:0%"></div></div>
+          <div class="progress-pct" id="pp-y5">0%</div>
+        </div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-card" onclick="showPage('y10')">
+        <div class="tc-header">
+          <div class="tc-year">2036</div>
+          <div class="tc-age">만 35세</div>
+        </div>
+        <div class="tc-label">10년 목표</div>
+        <div class="tc-goal empty" id="overview-y10-goal">목표를 입력해주세요 →</div>
+        <div class="progress-bar-wrap">
+          <div class="progress-bar"><div class="progress-fill" id="pf-y10" style="width:0%"></div></div>
+          <div class="progress-pct" id="pp-y10">0%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRINCIPLES ── -->
+<section class="page" id="page-principles">
+  <div class="page-header">
+    <div class="page-eyebrow">Values & Philosophy</div>
+    <div class="page-title">원칙 <span>&</span> 가치관</div>
+    <div class="page-meta">흔들릴 때 돌아올 곳</div>
+  </div>
+  <div class="principle-card">"내가 되고자 하는 모습이 있다면 철저히 그 모습으로 지금부터 행동해야 한다"</div>
+  <div class="principle-card">"선택과 집중" — 신대연</div>
+  <div style="margin-top:16px">
+    <ul class="checklist" id="principles-list"></ul>
+    <button class="add-check-btn" onclick="addPrinciple()">+ 원칙 추가</button>
+  </div>
+  <hr class="divider">
+  <div class="field">
+    <label class="field-label">현재의 나를 한 단어로</label>
+    <input class="field-input" id="self-word" placeholder="예: 준비중, 각성, 전환점..." oninput="autoSave()">
+  </div>
+  <div class="field">
+    <label class="field-label">지금 가장 중요한 고민</label>
+    <textarea class="field-textarea" id="current-worry" placeholder="브랜딩 타이밍 — 폐관수련 vs 지금 당장 행동..." oninput="autoSave()"></textarea>
+  </div>
+  <div class="field">
+    <label class="field-label">현재 최우선 과제 TOP 3</label>
+    <ul class="checklist" id="priorities-list"></ul>
+    <button class="add-check-btn" onclick="addPriority()">+ 과제 추가</button>
+  </div>
+</section>
+
+<!-- ── YEAR PAGES (1, 3, 5, 10) ── -->
+<section class="page" id="page-y1">
+  <div class="page-header">
+    <div class="page-eyebrow">1년 목표</div>
+    <div class="page-title"><span>2027</span> · 만 26세</div>
+  </div>
+  <div id="year-content-y1"></div>
+</section>
+
+<section class="page" id="page-y3">
+  <div class="page-header">
+    <div class="page-eyebrow">3년 목표</div>
+    <div class="page-title"><span>2029</span> · 만 28세</div>
+  </div>
+  <div id="year-content-y3"></div>
+</section>
+
+<section class="page" id="page-y5">
+  <div class="page-header">
+    <div class="page-eyebrow">5년 목표</div>
+    <div class="page-title"><span>2031</span> · 만 30세</div>
+  </div>
+  <div id="year-content-y5"></div>
+</section>
+
+<section class="page" id="page-y10">
+  <div class="page-header">
+    <div class="page-eyebrow">10년 목표</div>
+    <div class="page-title"><span>2036</span> · 만 35세</div>
+  </div>
+  <div id="year-content-y10"></div>
+</section>
+
+<!-- ── MONTH ── -->
+<section class="page" id="page-month">
+  <div class="page-header">
+    <div class="page-eyebrow">이번 달 목표</div>
+    <div class="page-title"><span id="month-title-text">—</span></div>
+    <div class="page-meta" id="month-subtitle">실시간 날짜 로딩 중...</div>
+  </div>
+  <div id="month-content"></div>
+</section>
+
+<!-- ── PAST MONTHS (동적 생성) ── -->
+<div id="past-month-pages"></div>
+
+</main>
+</div>
+
+<script>
+const SECTIONS = [
+  { id:'vocal',     icon:'🎤', color:'#c9504c', label:'보컬 / 음악 실력' },
+  { id:'brand',     icon:'🪞', color:'#9c6cc9', label:'브랜딩 / 아티스트 정체성' },
+  { id:'finance',   icon:'💴', color:'#4caa70', label:'재정 / 수입' },
+  { id:'network',   icon:'🤝', color:'#4c80c9', label:'인맥 / 네트워크' },
+  { id:'mental',    icon:'🧠', color:'#c9a84c', label:'정신 / 멘탈 관리' },
+  { id:'japanese',  icon:'🇯🇵', color:'#c9504c', label:'일본어 / 언어' },
+  { id:'sns',       icon:'📱', color:'#4c80c9', label:'SNS / 콘텐츠' },
+];
+
+const YEARS = ['y1','y3','y5','y10'];
+
+// Build year pages
+YEARS.forEach(yr => {
+  const cont = document.getElementById('year-content-' + yr);
+  cont.innerHTML = buildYearContent(yr);
+});
+
+function buildYearContent(yr) {
+  return `
+    <div class="field">
+      <label class="field-label">이 시기의 핵심 한 문장</label>
+      <textarea class="field-textarea" id="${yr}-core" placeholder="이 시기에 내가 반드시 달성해야 할 것은..." oninput="autoSave(); updateOverview('${yr}')"></textarea>
+    </div>
+    <div class="tabs">
+      ${SECTIONS.map((s,i) => `<div class="tab ${i===0?'active':''}" onclick="switchTab('${yr}','${s.id}',this)">${s.icon} ${s.label.split('/')[0].trim()}</div>`).join('')}
+    </div>
+    ${SECTIONS.map((s,i) => `
+    <div class="tab-panel ${i===0?'active':''}" id="${yr}-tab-${s.id}">
+      <div class="sections-grid">
+        <div class="section-card">
+          <div class="sc-header">
+            <div class="sc-icon" style="background:${s.color}22;color:${s.color}">${s.icon}</div>
+            <div class="sc-title">${s.label}</div>
+          </div>
+          <div class="field">
+            <label class="field-label">핵심 목표</label>
+            <textarea class="field-textarea" id="${yr}-${s.id}-goal" placeholder="이 분야의 핵심 목표..." oninput="autoSave()"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label">중간 목표</label>
+            <ul class="checklist" id="${yr}-${s.id}-mid"></ul>
+            <button class="add-check-btn" onclick="addCheck('${yr}-${s.id}-mid','${yr}')">+ 추가</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="field" style="margin-top:4px">
+            <label class="field-label">세부 목표</label>
+            <ul class="checklist" id="${yr}-${s.id}-detail"></ul>
+            <button class="add-check-btn" onclick="addCheck('${yr}-${s.id}-detail','${yr}')">+ 추가</button>
+          </div>
+          <div class="field">
+            <label class="field-label">메모 / 전략</label>
+            <textarea class="field-textarea" id="${yr}-${s.id}-memo" placeholder="구체적인 방법, 아이디어..." oninput="autoSave()"></textarea>
+          </div>
+          ${s.id === 'vocal' ? `
+          <div class="field">
+            <label class="field-label">현재 레벨</label>
+            <div class="level-row">
+              <input type="range" class="level-slider" min="1" max="10" value="1" id="${yr}-vocal-cur" oninput="document.getElementById('${yr}-vocal-cur-val').textContent=this.value;autoSave()">
+              <div class="level-val" id="${yr}-vocal-cur-val">1</div>
+            </div>
+            <label class="field-label" style="margin-top:10px">목표 레벨</label>
+            <div class="level-row">
+              <input type="range" class="level-slider" min="1" max="10" value="5" id="${yr}-vocal-tgt" oninput="document.getElementById('${yr}-vocal-tgt-val').textContent=this.value;autoSave()">
+              <div class="level-val" id="${yr}-vocal-tgt-val">5</div>
+            </div>
+          </div>` : ''}
+        </div>
+      </div>
+      <div class="field">
+        <label class="field-label">회고 (달성 후 작성)</label>
+        <textarea class="field-textarea" id="${yr}-${s.id}-retro" placeholder="달성한 것, 못한 것, 배운 것..." oninput="autoSave()"></textarea>
+      </div>
+    </div>`).join('')}
+    <hr class="divider">
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px">
+      <button class="save-btn" onclick="manualSave()">저장하기</button>
+      <div style="font-size:12px;color:var(--text-dim)">전체 진척도: <span id="${yr}-overall-pct">0%</span></div>
+    </div>
+  `;
+}
+
+function switchTab(yr, sid, el) {
+  document.querySelectorAll(`#page-${yr} .tab`).forEach(t => t.classList.remove('active'));
+  document.querySelectorAll(`#page-${yr} .tab-panel`).forEach(p => p.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById(`${yr}-tab-${sid}`).classList.add('active');
+}
+
+// Navigation
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + id).classList.add('active');
+  event.currentTarget && event.currentTarget.classList.add('active');
+  // fix nav highlight
+  document.querySelectorAll('.nav-item').forEach(n => {
+    if(n.getAttribute('onclick') && n.getAttribute('onclick').includes("'"+id+"'")) n.classList.add('active');
+  });
+}
+
+// Checklist
+function addCheck(listId, yr) {
+  const ul = document.getElementById(listId);
+  if(!ul) return;
+  const li = document.createElement('li');
+  li.className = 'check-item';
+  li.innerHTML = `
+    <div class="check-box" onclick="toggleCheck(this)"></div>
+    <textarea class="check-text" rows="1" placeholder="세부 항목..." oninput="autoSave();autoResize(this)"></textarea>
+  `;
+  ul.appendChild(li);
+  li.querySelector('textarea').focus();
+  updateProgress(yr);
+}
+
+function toggleCheck(box) {
+  box.classList.toggle('checked');
+  const txt = box.nextElementSibling;
+  txt.classList.toggle('done', box.classList.contains('checked'));
+  const yr = findYr(box);
+  updateProgress(yr);
+  updateRpg();
+  autoSave();
+}
+
+function findYr(el) {
+  const p = el.closest('.page');
+  if(!p) return null;
+  const id = p.id.replace('page-','');
+  if(id === 'month') return 'month';
+  return id;
+}
+
+function addPrinciple() {
+  const ul = document.getElementById('principles-list');
+  const li = document.createElement('li');
+  li.className = 'check-item';
+  li.innerHTML = `<div class="check-box" onclick="toggleCheck(this)"></div><textarea class="check-text" rows="1" placeholder="나만의 원칙..." oninput="autoSave();autoResize(this)"></textarea>`;
+  ul.appendChild(li);
+  li.querySelector('textarea').focus();
+}
+
+function addPriority() {
+  const ul = document.getElementById('priorities-list');
+  const li = document.createElement('li');
+  li.className = 'check-item';
+  li.innerHTML = `<div class="check-box" onclick="toggleCheck(this)"></div><textarea class="check-text" rows="1" placeholder="최우선 과제..." oninput="autoSave();autoResize(this)"></textarea>`;
+  ul.appendChild(li);
+  li.querySelector('textarea').focus();
+}
+
+function autoResize(el) {
+  el.style.height = 'auto';
+  el.style.height = el.scrollHeight + 'px';
+}
+
+// Progress
+function updateProgress(yr) {
+  if(yr === 'month') { updateMonthProgress(); return; }
+  if(!yr || !YEARS.includes(yr)) return;
+  let total = 0, done = 0;
+  SECTIONS.forEach(s => {
+    ['mid','detail'].forEach(t => {
+      const ul = document.getElementById(`${yr}-${s.id}-${t}`);
+      if(ul) {
+        ul.querySelectorAll('.check-box').forEach(b => {
+          total++;
+          if(b.classList.contains('checked')) done++;
+        });
+      }
+    });
+  });
+  const pct = total ? Math.round(done/total*100) : 0;
+  const el = document.getElementById(`${yr}-overall-pct`);
+  if(el) el.textContent = pct + '%';
+
+  const pf = document.getElementById('pf-' + yr);
+  const pp = document.getElementById('pp-' + yr);
+  const np = document.getElementById('nav-pct-' + yr);
+  if(pf) pf.style.width = pct + '%';
+  if(pp) pp.textContent = pct + '%';
+  if(np) np.textContent = pct + '%';
+}
+
+function updateOverview(yr) {
+  const el = document.getElementById(`overview-${yr}-goal`);
+  const src = document.getElementById(`${yr}-core`);
+  if(el && src) {
+    el.textContent = src.value || '목표를 입력해주세요 →';
+    el.classList.toggle('empty', !src.value);
+  }
+}
+
+// Log rows removed - replaced by month page
+
+// Save / Load
+let saveTimer;
+function autoSave() {
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(manualSave, 1200);
+}
+
+function manualSave() {
+  const data = {};
+
+  // Text fields
+  document.querySelectorAll('[id]').forEach(el => {
+    if((el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') && el.id) {
+      data[el.id] = el.value;
+    }
+  });
+
+  // Month checklists
+  const mk = getMonthKey();
+  SECTIONS.forEach(s => {
+    const ul = document.getElementById(`${mk}-${s.id}-todo`);
+    if(ul) data[`_cl_${mk}-${s.id}-todo`] = serializeList(ul);
+  });
+
+  // Checklists
+  ['principles-list','priorities-list'].forEach(lid => {
+    const ul = document.getElementById(lid);
+    if(ul) data['_cl_' + lid] = serializeList(ul);
+  });
+
+  YEARS.forEach(yr => {
+    SECTIONS.forEach(s => {
+      ['mid','detail'].forEach(t => {
+        const ul = document.getElementById(`${yr}-${s.id}-${t}`);
+        if(ul) data[`_cl_${yr}-${s.id}-${t}`] = serializeList(ul);
+      });
+    });
+  });
+
+  // Log tables removed
+
+  localStorage.setItem('terada_yu_plan', JSON.stringify(data));
+  const now = new Date();
+  document.getElementById('last-saved').textContent =
+    `${now.getMonth()+1}/${now.getDate()} ${now.getHours()}:${String(now.getMinutes()).padStart(2,'0')}`;
+}
+
+function serializeList(ul) {
+  return Array.from(ul.querySelectorAll('.check-item')).map(li => ({
+    checked: li.querySelector('.check-box').classList.contains('checked'),
+    text: li.querySelector('.check-text').value
+  }));
+}
+
+function serializeTable(tbId) {
+  const tb = document.getElementById(tbId);
+  if(!tb) return [];
+  return Array.from(tb.rows).map(tr =>
+    Array.from(tr.querySelectorAll('input,textarea')).map(el => el.value)
+  );
+}
+
+function loadData() {
+  const raw = localStorage.getItem('terada_yu_plan');
+  if(!raw) return;
+  const data = JSON.parse(raw);
+
+  Object.entries(data).forEach(([k, v]) => {
+    if(k.startsWith('_cl_')) {
+      const lid = k.slice(4);
+      const ul = document.getElementById(lid);
+      if(!ul || !Array.isArray(v)) return;
+      ul.innerHTML = '';
+      v.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'check-item';
+        li.innerHTML = `<div class="check-box${item.checked?' checked':''}"></div><textarea class="check-text" rows="1" oninput="autoSave();autoResize(this)">${item.text}</textarea>`;
+        if(item.checked) li.querySelector('.check-text').classList.add('done');
+        li.querySelector('.check-box').onclick = function(){ toggleCheck(this); };
+        ul.appendChild(li);
+      });
+    } else {
+      const el = document.getElementById(k);
+      if(el && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+        el.value = v;
+        if(el.tagName === 'TEXTAREA') autoResize(el);
+      }
+    }
+  });
+
+  YEARS.forEach(yr => {
+    updateOverview(yr);
+    updateProgress(yr);
+  });
+}
+
+function restoreTable(tbId, rows, cols) {
+  if(!Array.isArray(rows)) return;
+  const tb = document.getElementById(tbId);
+  if(!tb) return;
+  rows.forEach(row => {
+    const tr = document.createElement('tr');
+    row.forEach((val, i) => {
+      const td = document.createElement('td');
+      if(i === 0) {
+        td.innerHTML = `<input placeholder="" oninput="autoSave()">`;
+        td.querySelector('input').value = val;
+      } else {
+        td.innerHTML = `<textarea rows="2" oninput="autoSave();autoResize(this)"></textarea>`;
+        const ta = td.querySelector('textarea');
+        ta.value = val;
+        setTimeout(() => autoResize(ta), 50);
+      }
+      tr.appendChild(td);
+    });
+    tb.appendChild(tr);
+  });
+}
+
+
+// ── RPG System ──
+const RPG_RANKS = [
+  { lv:1,  ko:'입문자', en:'Seeker',     color:'#52b878' },
+  { lv:2,  ko:'숙련자', en:'Adept',      color:'#52b878' },
+  { lv:3,  ko:'전문가', en:'Specialist', color:'#52b878' },
+  { lv:4,  ko:'지도자', en:'Leader',     color:'#d4aa50' },
+  { lv:5,  ko:'명사',   en:'Luminary',   color:'#d4aa50' },
+  { lv:6,  ko:'혁신가', en:'Innovator',  color:'#d4aa50' },
+  { lv:7,  ko:'현자',   en:'Sage',       color:'#c97840' },
+  { lv:8,  ko:'거성',   en:'Magnate',    color:'#c97840' },
+  { lv:9,  ko:'선구자', en:'Pathfinder', color:'#d45550' },
+  { lv:10, ko:'영원',   en:'Eternal',    color:'#9a3aaa' },
+];
+
+function xpForLevel(lv) {
+  // 메이플스토리식: 기하급수적 증가
+  return Math.floor(10 * Math.pow(1.4, lv - 1));
+}
+
+function totalXpToLevel(targetLv) {
+  let total = 0;
+  for(let i = 1; i < targetLv; i++) total += xpForLevel(i);
+  return total;
+}
+
+function calcRpgLevel(xp) {
+  let lv = 1;
+  while(lv < 10 && xp >= totalXpToLevel(lv + 1)) lv++;
+  return lv;
+}
+
+function countTotalXp() {
+  let xp = 0;
+  // 연간 목표 체크 (weight: 3 each)
+  YEARS.forEach(yr => {
+    SECTIONS.forEach(s => {
+      ['mid','detail'].forEach(t => {
+        const ul = document.getElementById(yr + '-' + s.id + '-' + t);
+        if(ul) ul.querySelectorAll('.check-box.checked').forEach(() => xp += 3);
+      });
+    });
+  });
+  // 월간 목표 체크 (weight: 1 each)
+  const mk = getMonthKey();
+  SECTIONS.forEach(s => {
+    const ul = document.getElementById(mk + '-' + s.id + '-todo');
+    if(ul) ul.querySelectorAll('.check-box.checked').forEach(() => xp += 1);
+  });
+  return xp;
+}
+
+function updateRpg() {
+  const xp = countTotalXp();
+  const lv = calcRpgLevel(xp);
+  const rank = RPG_RANKS[lv - 1];
+  const curXp = xp - totalXpToLevel(lv);
+  const needXp = xpForLevel(lv);
+  const pct = Math.min(100, Math.round(curXp / needXp * 100));
+
+  document.getElementById('rpg-level-label').textContent = 'Lv.' + lv;
+  document.getElementById('rpg-title-ko').textContent = rank.ko;
+  document.getElementById('rpg-title-en').textContent = rank.en;
+  document.getElementById('rpg-xp-label').textContent = curXp + ' / ' + needXp + ' XP';
+  document.getElementById('rpg-bar-fill').style.width = pct + '%';
+  document.getElementById('rpg-bar-fill').style.background =
+    'linear-gradient(90deg, ' + rank.color + '88, ' + rank.color + ')';
+}
+
+// ── Past Month Archive ──
+function getPastMonthKeys() {
+  const raw = localStorage.getItem('terada_yu_plan');
+  if(!raw) return [];
+  const data = JSON.parse(raw);
+  const mk = getMonthKey();
+  const keys = new Set();
+  Object.keys(data).forEach(k => {
+    const m = k.match(/^(month_\d+_\d+)/);
+    if(m && m[1] !== mk) keys.add(m[1]);
+  });
+  return Array.from(keys).sort().reverse();
+}
+
+function monthKeyToLabel(mk) {
+  const parts = mk.split('_');
+  return parts[1] + '년 ' + parts[2] + '월';
+}
+
+function buildPastMonthNav() {
+  const past = getPastMonthKeys();
+  const container = document.getElementById('nav-past-months');
+  if(!container) return;
+  container.innerHTML = past.map(mk => {
+    const label = monthKeyToLabel(mk);
+    return '<div class="nav-item" onclick="showPastMonth(\'' + mk + '\')">' +
+      '<div class="nav-dot"></div>' + label + '</div>';
+  }).join('');
+}
+
+function showPastMonth(mk) {
+  // 동적으로 과거 달 페이지 생성
+  const pageId = 'page-past-' + mk;
+  let page = document.getElementById(pageId);
+  if(!page) {
+    page = document.createElement('section');
+    page.className = 'page';
+    page.id = pageId;
+    const label = monthKeyToLabel(mk);
+    page.innerHTML =
+      '<div class="page-header">' +
+        '<div class="page-eyebrow">월 별 목표</div>' +
+        '<div class="page-title"><span>' + label + '</span></div>' +
+      '</div>' +
+      '<div id="past-content-' + mk + '"></div>';
+    document.getElementById('past-month-pages').appendChild(page);
+    buildPastMonthContent(mk);
+  }
+  showPage('past-' + mk);
+}
+
+function buildPastMonthContent(mk) {
+  const cont = document.getElementById('past-content-' + mk);
+  if(!cont) return;
+  const raw = localStorage.getItem('terada_yu_plan');
+  if(!raw) return;
+  const data = JSON.parse(raw);
+  const label = monthKeyToLabel(mk);
+
+  let html = '<div class="field"><label class="field-label">핵심 한 문장</label>';
+  const core = data[mk + '-core'] || '';
+  html += '<div class="principle-card" style="font-style:normal">' + (core || '기록 없음') + '</div></div>';
+
+  SECTIONS.forEach(s => {
+    const goal = data[mk + '-' + s.id + '-goal'] || '';
+    const retro = data[mk + '-' + s.id + '-retro'] || '';
+    if(!goal && !retro) return;
+    html += '<div class="section-card" style="margin-bottom:12px">';
+    html += '<div class="sc-header"><div class="sc-icon" style="background:' + s.color + '22;color:' + s.color + '">' + s.icon + '</div>';
+    html += '<div class="sc-title">' + s.label + '</div></div>';
+    if(goal) html += '<div class="field"><label class="field-label">목표</label><div style="font-size:14px;color:var(--text)">' + goal + '</div></div>';
+    if(retro) html += '<div class="field"><label class="field-label">회고</label><div style="font-size:14px;color:var(--text-muted)">' + retro + '</div></div>';
+    html += '</div>';
+  });
+  cont.innerHTML = html;
+}
+
+// ── Month helpers ──
+const MONTH_KO = ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'];
+const DAY_KO = ['일','월','화','수','목','금','토'];
+
+function getMonthKey() {
+  const d = new Date();
+  return `month_${d.getFullYear()}_${d.getMonth()+1}`;
+}
+
+function updateDateDisplay() {
+  const d = new Date();
+  const yr = d.getFullYear();
+  const mo = MONTH_KO[d.getMonth()];
+  const day = d.getDate();
+  const dow = DAY_KO[d.getDay()];
+  const label = `${yr}년 ${mo}`;
+  const full = `${yr}년 ${mo} ${day}일 (${dow})`;
+
+  const titleEl = document.getElementById('month-title-text');
+  const subEl = document.getElementById('month-subtitle');
+  const navEl = document.getElementById('nav-month-label');
+  const ovYr = document.getElementById('overview-month-year');
+  const ovDate = document.getElementById('overview-month-date');
+
+  if(titleEl) titleEl.textContent = label;
+  if(subEl) subEl.textContent = full;
+  if(navEl) navEl.textContent = mo + ' 목표';
+  if(ovYr) ovYr.textContent = label;
+  if(ovDate) ovDate.textContent = full;
+  const t2 = document.getElementById('month-title-text2');
+  const s2 = document.getElementById('month-subtitle2');
+  if(t2) t2.textContent = label;
+  if(s2) s2.textContent = full;
+}
+
+function buildMonthContent() {
+  const mk = getMonthKey();
+  const d = new Date();
+  const mo = MONTH_KO[d.getMonth()];
+  const cont = document.getElementById('month-content');
+  if(!cont) return;
+  cont.innerHTML = `
+    <div class="field">
+      <label class="field-label">이번 달 핵심 한 문장</label>
+      <textarea class="field-textarea" id="${mk}-core" placeholder="${mo}에 내가 반드시 달성해야 할 것은..." oninput="autoSave();updateMonthOverview()"></textarea>
+    </div>
+    <div class="tabs">
+      ${SECTIONS.map((s,i) => `<div class="tab ${i===0?'active':''}" onclick="switchTab('month','${s.id}',this)">${s.icon} ${s.label.split('/')[0].trim()}</div>`).join('')}
+    </div>
+    ${SECTIONS.map((s,i) => `
+    <div class="tab-panel ${i===0?'active':''}" id="month-tab-${s.id}">
+      <div class="sections-grid">
+        <div class="section-card">
+          <div class="sc-header">
+            <div class="sc-icon" style="background:${s.color}22;color:${s.color}">${s.icon}</div>
+            <div class="sc-title">${s.label}</div>
+          </div>
+          <div class="field">
+            <label class="field-label">이번 달 목표</label>
+            <textarea class="field-textarea" id="${mk}-${s.id}-goal" placeholder="이번 달 이 분야에서 달성할 것..." oninput="autoSave()"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label">할 일</label>
+            <ul class="checklist" id="${mk}-${s.id}-todo"></ul>
+            <button class="add-check-btn" onclick="addCheck('${mk}-${s.id}-todo','month')">+ 추가</button>
+          </div>
+        </div>
+        <div class="section-card">
+          <div class="field" style="margin-top:4px">
+            <label class="field-label">메모 / 전략</label>
+            <textarea class="field-textarea" id="${mk}-${s.id}-memo" placeholder="구체적인 방법, 아이디어..." oninput="autoSave()"></textarea>
+          </div>
+          <div class="field">
+            <label class="field-label">이번 달 회고 (월말 작성)</label>
+            <textarea class="field-textarea" id="${mk}-${s.id}-retro" placeholder="달성한 것, 못한 것, 배운 것..." oninput="autoSave()"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>`).join('')}
+    <hr class="divider">
+    <div style="display:flex;align-items:center;justify-content:space-between">
+      <button class="save-btn" onclick="manualSave()">저장하기</button>
+      <div style="font-size:12px;color:var(--text-dim)">이번 달 진척도: <span id="month-overall-pct">0%</span></div>
+    </div>
+  `;
+  // restore saved data for this month
+  const raw = localStorage.getItem('terada_yu_plan');
+  if(raw) {
+    const data = JSON.parse(raw);
+    Object.entries(data).forEach(([k,v]) => {
+      if(!k.startsWith(mk)) return;
+      if(k.startsWith('_cl_' + mk)) {
+        const lid = k.slice(4);
+        const ul = document.getElementById(lid);
+        if(!ul || !Array.isArray(v)) return;
+        ul.innerHTML = '';
+        v.forEach(item => {
+          const li = document.createElement('li');
+          li.className = 'check-item';
+          li.innerHTML = '<div class="check-box' + (item.checked?' checked':'') + '"></div><textarea class="check-text" rows="1" oninput="autoSave();autoResize(this)">' + item.text + '</textarea>';
+          if(item.checked) li.querySelector('.check-text').classList.add('done');
+          li.querySelector('.check-box').onclick = function(){ toggleCheck(this); };
+          ul.appendChild(li);
+        });
+      } else {
+        const el = document.getElementById(k);
+        if(el && (el.tagName==='INPUT'||el.tagName==='TEXTAREA')) {
+          el.value = v;
+          if(el.tagName==='TEXTAREA') autoResize(el);
+        }
+      }
+    });
+  }
+  updateMonthProgress();
+  updateMonthOverview();
+}
+
+function updateMonthProgress() {
+  const mk = getMonthKey();
+  let total=0, done=0;
+  SECTIONS.forEach(s => {
+    const ul = document.getElementById(mk + '-' + s.id + '-todo');
+    if(ul) ul.querySelectorAll('.check-box').forEach(b => { total++; if(b.classList.contains('checked')) done++; });
+  });
+  const pct = total ? Math.round(done/total*100) : 0;
+  const el = document.getElementById('month-overall-pct');
+  if(el) el.textContent = pct + '%';
+  const pf = document.getElementById('pf-month');
+  const pp = document.getElementById('pp-month');
+  const np = document.getElementById('nav-pct-month');
+  if(pf) pf.style.width = pct + '%';
+  if(pp) pp.textContent = pct + '%';
+  if(np) np.textContent = pct + '%';
+}
+
+function updateMonthOverview() {
+  const mk = getMonthKey();
+  const src = document.getElementById(mk + '-core');
+  const el = document.getElementById('overview-month-goal');
+  if(el && src) {
+    el.textContent = src.value || '목표를 입력해주세요 →';
+  }
+}
+
+// Init
+updateDateDisplay();
+setInterval(updateDateDisplay, 60000);
+buildMonthContent();
+loadData();
+buildPastMonthNav();
+updateRpg();
+
+// ─────────────────────────────────────────
+// Google Drive Sync
+// ─────────────────────────────────────────
+// ※ 아래 CLIENT_ID를 본인의 Google Cloud Console에서 발급한 값으로 교체하세요.
+const GDRIVE_CLIENT_ID = '213791098484-119bk3c473hgfg78md4ue4dkbmbp7s5l.apps.googleusercontent.com';
+const GDRIVE_SCOPE = 'https://www.googleapis.com/auth/drive.appdata';
+const GDRIVE_FILE_NAME = 'terada_yu_plan.json';
+
+let gTokenClient = null;
+let gAccessToken = null;
+let gFileId = null;
+
+function driveSetup() {
+  if (!window.google || GDRIVE_CLIENT_ID.startsWith('YOUR_')) return;
+  gTokenClient = google.accounts.oauth2.initTokenClient({
+    client_id: GDRIVE_CLIENT_ID,
+    scope: GDRIVE_SCOPE,
+    callback: (resp) => {
+      if (resp.error) { showToast('로그인 실패: ' + resp.error); return; }
+      gAccessToken = resp.access_token;
+      setDriveStatus('connected');
+      showToast('✓ Google Drive 연결됨');
+      findOrCreateFile();
+    }
+  });
+}
+
+function driveLogin() {
+  if (GDRIVE_CLIENT_ID.startsWith('YOUR_')) {
+    showToast('⚠ Client ID를 먼저 설정해주세요.');
+    return;
+  }
+  if (!gTokenClient) driveSetup();
+  gTokenClient.requestAccessToken({ prompt: 'consent' });
+}
+
+function setDriveStatus(state) {
+  const dot = document.getElementById('drive-dot');
+  const txt = document.getElementById('drive-status-text');
+  const btnSave = document.getElementById('btn-drive-save');
+  const btnLoad = document.getElementById('btn-drive-load');
+  if (state === 'connected') {
+    dot.className = 'drive-dot connected';
+    txt.textContent = 'Drive 연결됨';
+    btnSave.disabled = false;
+    btnLoad.disabled = false;
+  } else if (state === 'syncing') {
+    dot.className = 'drive-dot syncing';
+    txt.textContent = '동기화 중...';
+  } else {
+    dot.className = 'drive-dot';
+    txt.textContent = 'Google Drive 미연결';
+    btnSave.disabled = true;
+    btnLoad.disabled = true;
+  }
+}
+
+async function findOrCreateFile() {
+  setDriveStatus('syncing');
+  const res = await fetch(
+    `https://www.googleapis.com/drive/v3/files?spaces=appDataFolder&q=name='${GDRIVE_FILE_NAME}'&fields=files(id,name)`,
+    { headers: { Authorization: 'Bearer ' + gAccessToken } }
+  );
+  const data = await res.json();
+  if (data.files && data.files.length > 0) {
+    gFileId = data.files[0].id;
+    showToast('기존 파일 발견! 불러오려면 [불러오기]를 눌러주세요.');
+  }
+  setDriveStatus('connected');
+}
+
+async function driveSave() {
+  if (!gAccessToken) { showToast('먼저 Google 로그인을 해주세요.'); return; }
+  setDriveStatus('syncing');
+  manualSave();
+  const raw = localStorage.getItem('terada_yu_plan') || '{}';
+  const blob = new Blob([raw], { type: 'application/json' });
+  const meta = JSON.stringify({ name: GDRIVE_FILE_NAME, parents: ['appDataFolder'] });
+  const url = gFileId
+    ? `https://www.googleapis.com/upload/drive/v3/files/${gFileId}?uploadType=multipart`
+    : 'https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart';
+  const method = gFileId ? 'PATCH' : 'POST';
+  const form = new FormData();
+  form.append('metadata', new Blob([meta], { type: 'application/json' }));
+  form.append('file', blob);
+  const res = await fetch(url, { method, headers: { Authorization: 'Bearer ' + gAccessToken }, body: form });
+  const result = await res.json();
+  if (result.id) { gFileId = result.id; showToast('✓ Drive에 저장됨'); }
+  else showToast('저장 실패. 다시 시도해주세요.');
+  setDriveStatus('connected');
+}
+
+async function driveLoad() {
+  if (!gAccessToken) { showToast('먼저 Google 로그인을 해주세요.'); return; }
+  if (!gFileId) await findOrCreateFile();
+  if (!gFileId) { showToast('Drive에 저장된 파일이 없어요.'); return; }
+  setDriveStatus('syncing');
+  const res = await fetch(
+    `https://www.googleapis.com/drive/v3/files/${gFileId}?alt=media`,
+    { headers: { Authorization: 'Bearer ' + gAccessToken } }
+  );
+  const text = await res.text();
+  try {
+    JSON.parse(text);
+    localStorage.setItem('terada_yu_plan', text);
+    loadData();
+    showToast('✓ Drive에서 불러왔어요');
+  } catch { showToast('파일 형식 오류'); }
+  setDriveStatus('connected');
+}
+
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('drive-toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3500);
+}
+
+function toggleSidebar() {
+  document.querySelector('.sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+const gsiScript = document.createElement('script');
+gsiScript.src = 'https://accounts.google.com/gsi/client';
+gsiScript.onload = driveSetup;
+document.head.appendChild(gsiScript);
+</script>
+</body>
+</html>
